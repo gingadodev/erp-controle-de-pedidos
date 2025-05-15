@@ -28,15 +28,29 @@
 </div>
 </nav>
 
-
-
 <?php $view->render($content, $data); ?>
+
+<div class="modal fade" id="alert2505151848" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="title2505151848"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="message2505151848"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="<?php echo URL_JS; ?>bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo URL_JS; ?>bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="<?php echo URL_JS; ?>jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo URL_JS; ?>jquery.mask.min.js" type="text/javascript"></script>
 <script src="<?php echo URL_JS; ?>custom.js" type="text/javascript"></script>
+<script src="<?php echo URL_JS; ?>tl.js" type="text/javascript"></script>
 
 </body>
 </html>
