@@ -14,7 +14,7 @@ class IndexController
 
     public function indexAction()
     {
-        echo __METHOD__;
+        RedirectHelper::to(URL_BASE . '?c=produto');
     }
 
 }    
