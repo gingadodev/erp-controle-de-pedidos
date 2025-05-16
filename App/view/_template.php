@@ -44,7 +44,9 @@
     </div>
   </div>
 </div>
-
+<script type="text/javascript">
+    const URL_BASE = '<?php echo URL_BASE; ?>';
+</script>
 <script src="<?php echo URL_JS; ?>bootstrap.min.js" type="text/javascript"></script>
 <script src="<?php echo URL_JS; ?>bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="<?php echo URL_JS; ?>jquery.min.js" type="text/javascript"></script>

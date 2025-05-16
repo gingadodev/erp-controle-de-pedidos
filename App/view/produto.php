@@ -5,6 +5,7 @@
 </section>
 <div class="container">
 
+<form action="" method="post" enctype="multipart/form-data">
      <div class="row">
         <div class="col-sm-4">
           <label for="nome" class="form-label">Name:</label>
@@ -25,16 +26,19 @@
         <div class="col-sm-4">
           <label class="form-label">&nbsp;</label>
             <ul class="d-flex justify-content-end list-unstyled gap-3 mt-0">
-                <li class="spinner-border text-primary d-none" role="status">
+                <li class="spinner-border text-primary d-none js_loadSalvar" role="status">
                       <span class="sr-only"></span>
                 </li>
                 <li style="margin-right: 8px">
-                    <button class="btn btn-primary">Salvar</button>
+                    <button type="button" class="btn btn-primary" id="btnSaveProduct">Salvar</button>
                 </li>
             </ul>
         </div>
     </div>
-  </div>
+</form>
+
+</div>
+
 <div class="container">
 <div class="table-responsive">
 <table class="table table-striped table-hover">
