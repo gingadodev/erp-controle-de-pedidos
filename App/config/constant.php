@@ -2,7 +2,10 @@
 
 $url = $dotenv->get('BASE_URL');
 
-$isLocal = ($_SERVER['HTTP_HOST'] == '127.0.0.1');
+$isLocal = (
+    $_SERVER['HTTP_HOST'] == '127.0.0.1' ||
+    $_SERVER['HTTP_HOST'] == 'localhost'
+);
 
 if($isLocal) {
     $url = $dotenv->get('BASE_URL_DEV');
@@ -17,11 +20,11 @@ $db_password = $dotenv->get('DB_PASSWORD');
 
 if($isLocal){
 
-$db_connection = $dotenv->get('DB_CONNECTION');
-$db_host = $dotenv->get('DB_HOST');
-$db_database = $dotenv->get('DB_DATABASE');
-$db_username =  $dotenv->get('DB_USERNAME');
-$db_password = $dotenv->get('DB_PASSWORD');
+$db_connection = $dotenv->get('DB_CONNECTION_DEV');
+$db_host = $dotenv->get('DB_HOST_DEV');
+$db_database = $dotenv->get('DB_DATABASE_DEV');
+$db_username =  $dotenv->get('DB_USERNAME_DEV');
+$db_password = $dotenv->get('DB_PASSWORD_DEV');
 
 }
 
