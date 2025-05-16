@@ -49,12 +49,14 @@ class ProdutoController
             $idProduto = $this->produto->insert($data);
 
             $status = 'error';
+            $title = 'Ops!';
             $message = 'Erro ao processar dados.';
             $result = [];
 
             if(isset($idProduto)){
 
                 $status = 'success';
+                $title = 'Sucesso!';
                 $message = 'Produto adicionado';
                 $result = $data;
 
@@ -67,6 +69,7 @@ class ProdutoController
 
             echo json_encode([
                 'status' => $status,
+                'title' => $title,
                 'message' => $message,
                 'data' => $result
             ]);

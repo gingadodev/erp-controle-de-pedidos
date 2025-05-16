@@ -30,7 +30,7 @@
             dataType: 'json',
             success: function(response) {
                 loadSalvar.addClass('d-none');
-                tl_alert('sucesso', response.message);
+                tl_alert(response.title, response.message);
             },
             error: function(xhr) {
                 loadSalvar.addClass('d-none');
