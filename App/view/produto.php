@@ -50,29 +50,9 @@
         <th>Estoque</th>
         <th>&nbsp;</th>
     </thead>
-    <tbody>
-    <tr>
-        <td>1</td>
-        <td>camiseta 1</td>
-        <td>9</td>
-        <td>8</td>
-        <td>7</td>
-        <td class="text-end">
-
-            <ul class="d-flex justify-content-end list-unstyled gap-3 mt-0">
-                <li>
-                    <div class="btn btn-success">Comprar</div>
-                </li>
-                <li>
-                    <div class="btn btn-primary">Editar</div>
-                </li>
-            </ul>
-
-
-        </td>
-    </tr>
+    <tbody id="listTableBody">
+            <!-- listar produtos dinamicamente -->
     </tbody>
-</tbody>
 </table>
 </div>
 </div>

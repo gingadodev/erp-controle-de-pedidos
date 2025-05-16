@@ -36,6 +36,8 @@ class ProdutoController
     public function insertAction()
     {
 
+        header('Content-Type: application/json');
+
         $nome = $this->request->post('nome');
         $preco = $this->request->post('preco');
         $variacao = $this->request->post('variacao');
@@ -80,6 +82,15 @@ class ProdutoController
         }
 
         return;
+    }
+
+    public function listAction()
+    {
+        header('Content-Type: application/json');
+
+        $response = $this->produto->getAll();
+
+        echo json_encode($response);
     }
 
 }    

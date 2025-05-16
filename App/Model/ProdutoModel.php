@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Model\IConnModel;
+use PDO;
 
 class ProdutoModel
 {
@@ -25,6 +26,27 @@ class ProdutoModel
         $lastId = $conn->lastInsertId();
 
         return $lastId;
+    }
+
+    public function getAll()
+    {
+        $sql = "
+            SELECT 
+            p.id,
+            p.nome,
+            p.preco,
+            e.variacao,
+            e.quantidade 
+            FROM tb_produtos AS p 
+            INNER JOIN tb_estoque e ON (e.id_produto = p.id)
+            ORDER BY p.id DESC
+        ";
+
+        $conn = $this->conn->get();
+        $stmt = $conn->query($sql);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
     }
 }    
 
