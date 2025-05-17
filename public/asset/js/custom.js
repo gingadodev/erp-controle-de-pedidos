@@ -37,9 +37,7 @@ function loadList() {
       loadList();
 
     $('#preco').mask('000.000.000,00', {reverse: true});
-    $('#variacao').mask('0000000000');
-    $('#estoque').mask('0000000000');
-
+    $('#quantidade').mask('0000000000');
 
 
     $('#btnSaveProduct').on('click', function(e) {
@@ -50,14 +48,14 @@ function loadList() {
         let nome = $('#nome');
         let preco = $('#preco');
         let variacao = $('#variacao');
-        let estoque = $('#estoque');
+        let quantidade = $('#quantidade');
         let loadSalvar = $('.js_loadSalvar');
 
         if (
           nome.val().trim() === '' ||
           preco.val().trim() === '' ||
           variacao.val().trim() === '' ||
-          estoque.val().trim() === ''
+          quantidade.val().trim() === ''
         ) {
 
           tl_alert('Ops!', 'Por favor, preencha todos os campos.');
@@ -66,11 +64,10 @@ function loadList() {
 
         if (
           parseFloat(preco.val()) <= 0 ||
-          parseFloat(variacao.val()) <= 0 ||
-          parseInt(estoque.val()) <= 0
+          parseInt(quantidade.val()) <= 0
         ) {
 
-          tl_alert('Ops!', 'Preço, variação e estoque devem ser maiores que zero.');
+          tl_alert('Ops!', 'Preço e quantidade devem ser maiores que zero.');
           return;
         }
 
@@ -81,7 +78,7 @@ function loadList() {
             nome: nome.val(),
             preco: preco.val(),
             variacao: variacao.val(),
-            estoque: estoque.val()
+            quantidade: quantidade.val()
         };
 
         loadSalvar.removeClass('d-none');
@@ -99,7 +96,7 @@ function loadList() {
                 nome.val('');
                 preco.val('');
                 variacao.val('');
-                estoque.val('');
+                quantidade.val('');
 
                 tl_alert(response.title, response.message);
                 loadList();
@@ -120,7 +117,7 @@ function loadList() {
         let nome = $('#nome');
         let preco = $('#preco');
         let variacao = $('#variacao');
-        let estoque = $('#estoque');
+        let quantidade = $('#quantidade');
         let form_produto = $('#form_produto');
         let loadSalvar = $('.js_loadSalvar');
 
@@ -148,7 +145,7 @@ function loadList() {
                         nome.val(response.data.nome);
                         preco.val(response.data.preco);
                         variacao.val(response.data.variacao);
-                        estoque.val(response.data.quantidade);
+                        quantidade.val(response.data.quantidade);
 
                         loadSalvar.addClass('d-none');
 

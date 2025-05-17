@@ -42,7 +42,7 @@ class ProdutoController
         $nome = $this->request->post('nome');
         $preco = $this->request->post('preco');
         $variacao = $this->request->post('variacao');
-        $quantidade = $this->request->post('estoque');
+        $quantidade = $this->request->post('quantidade');
 
         $data['nome'] = $nome;
         $data['preco'] = (!isset($preco))? 0: str_replace(['.', ','], ['', '.'], $preco);
@@ -140,7 +140,7 @@ class ProdutoController
         $nome = $this->request->post('nome');
         $preco = $this->request->post('preco');
         $variacao = $this->request->post('variacao');
-        $quantidade = $this->request->post('estoque');
+        $quantidade = $this->request->post('quantidade');
 
         $data['nome'] = $nome;
         $data['preco'] = (!isset($preco))? 0: str_replace(['.', ','], ['', '.'], $preco);

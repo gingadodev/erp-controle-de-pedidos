@@ -20,15 +20,15 @@
           <label for="preco" class="form-label">Preço (R$):</label>
           <input type="text" class="form-control" id="preco" placeholder="R$ 0,00">
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
           <label for="variacao" class="form-label">Variação:</label>
-          <input type="text" class="form-control" id="variacao" placeholder="0">
+          <input type="text" class="form-control" id="variacao">
         </div>
         <div class="col-sm-1">
-          <label for="estoque" class="form-label">Estoque</label>
-          <input type="text" class="form-control" id="estoque" placeholder="0">
+          <label for="quantidade" class="form-label">Quantidade</label>
+          <input type="number" class="form-control" id="quantidade" placeholder="0">
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-2">
           <label class="form-label">&nbsp;</label>
             <ul class="d-flex justify-content-end list-unstyled gap-3 mt-0">
                 <li class="spinner-border text-primary d-none js_loadSalvar" role="status">
@@ -52,7 +52,7 @@
         <th>Nome</th>
         <th>Preço</th>
         <th>Variação</th>
-        <th>Estoque</th>
+        <th>Quantidade</th>
         <th>&nbsp;</th>
     </thead>
     <tbody id="listTableBody">

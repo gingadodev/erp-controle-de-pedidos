@@ -20,7 +20,7 @@ class EstoqueModel
         $str = ''
             . "INSERT INTO tb_estoque "
             . "(`id_produto`, `variacao`, `quantidade`) VALUES "
-            ."('%d', '%d', '%d')"
+            ."('%d', '%s', '%d')"
             . '';
 
         $sql = sprintf($str, 

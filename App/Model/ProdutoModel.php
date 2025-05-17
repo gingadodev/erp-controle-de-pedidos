@@ -43,7 +43,7 @@ class ProdutoModel
         . '';
 
         $stre = ''
-        . "UPDATE tb_estoque SET `variacao` = '%d', `quantidade` = '%d' "
+        . "UPDATE tb_estoque SET `variacao` = '%s', `quantidade` = '%d' "
         . "WHERE id_produto = %d"
         . '';
 
