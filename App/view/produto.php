@@ -3,10 +3,15 @@
           <h1 class="jumbotron-heading">Produto</h1>
         </div>
 </section>
-<div class="container">
+<div class="container" id="form_produto">
 
 <form action="" method="post" enctype="multipart/form-data">
+     <input type="hidden" id="id_form" value="0" />
      <div class="row">
+        <div class="col-sm-1">
+          <label for="nome" class="form-label">id</label>
+          <input type="text" class="form-control" id="cod" value="0" disabled>
+        </div>
         <div class="col-sm-4">
           <label for="nome" class="form-label">Name:</label>
           <input type="text" class="form-control" id="nome">
@@ -23,7 +28,7 @@
           <label for="estoque" class="form-label">Estoque</label>
           <input type="text" class="form-control" id="estoque" placeholder="0">
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <label class="form-label">&nbsp;</label>
             <ul class="d-flex justify-content-end list-unstyled gap-3 mt-0">
                 <li class="spinner-border text-primary d-none js_loadSalvar" role="status">
