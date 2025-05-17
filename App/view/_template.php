@@ -51,8 +51,10 @@
 <script src="<?php echo URL_JS; ?>bootstrap.bundle.min.js" type="text/javascript"></script>
 <script src="<?php echo URL_JS; ?>jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo URL_JS; ?>jquery.mask.min.js" type="text/javascript"></script>
-<script src="<?php echo URL_JS; ?>custom.js" type="text/javascript"></script>
 <script src="<?php echo URL_JS; ?>tl.js" type="text/javascript"></script>
+<?php if(isset($jsList)){ foreach ($jsList as $jsfile) { ?>
+<script src="<?php echo URL_JS . $jsfile; ?>" type="text/javascript"></script>
+<?php }} ?>
 
 </body>
 </html>

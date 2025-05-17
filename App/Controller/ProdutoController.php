@@ -29,6 +29,7 @@ class ProdutoController
         $view = new ViewHelper();
 
         $data['title'] = 'Produto';
+        $data['jsList'] = ['produto.js'];
         $data['data'] = $data;
 
         $view->template('produto', $data);
