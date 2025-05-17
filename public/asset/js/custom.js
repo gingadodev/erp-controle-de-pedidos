@@ -53,6 +53,28 @@ function loadList() {
         let estoque = $('#estoque');
         let loadSalvar = $('.js_loadSalvar');
 
+        if (
+          nome.val().trim() === '' ||
+          preco.val().trim() === '' ||
+          variacao.val().trim() === '' ||
+          estoque.val().trim() === ''
+        ) {
+
+          tl_alert('Ops!', 'Por favor, preencha todos os campos.');
+          return;
+        }
+
+        if (
+          parseFloat(preco.val()) <= 0 ||
+          parseFloat(variacao.val()) <= 0 ||
+          parseInt(estoque.val()) <= 0
+        ) {
+
+          tl_alert('Ops!', 'Preço, variação e estoque devem ser maiores que zero.');
+          return;
+        }
+
+
         let formData = {
             id: id_form.val(),
             cod: cod.val(),
