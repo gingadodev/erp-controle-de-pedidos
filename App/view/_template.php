@@ -21,6 +21,9 @@
         <a class="nav-link" href="<?php echo URL_BASE; ?>?c=produto">Produto</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="<?php echo URL_BASE; ?>?c=cupons">Cupons</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="<?php echo URL_BASE; ?>?c=carrinho">Carrinho</a>
       </li>
     </ul>
