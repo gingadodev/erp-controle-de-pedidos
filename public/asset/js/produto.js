@@ -13,7 +13,7 @@ function loadList() {
                  <tr data-id="${ln.id}">
                      <td>${ln.id}</td>
                      <td>${ln.nome}</td>
-                     <td>${ln.preco}</td>
+                     <td>${tl_moedaBr(ln.preco)}</td>
                      <td>${ln.variacao}</td>
                      <td>${ln.quantidade}</td>
                      <td class="text-end">

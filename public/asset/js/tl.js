@@ -7,3 +7,16 @@ function tl_alert(title, message)
     modal.show();
 }
 
+
+function tl_moedaBr(valor){
+
+    let moeda = Intl.NumberFormat( 'pt-br', {
+
+        style: 'currency', 
+        currency: 'BRL'
+
+    }).format(valor);
+
+    return moeda;
+}
+

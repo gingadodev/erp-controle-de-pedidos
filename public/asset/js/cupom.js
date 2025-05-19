@@ -13,8 +13,8 @@ function loadList() {
                  <tr data-id="${ln.id}">
                      <td>${ln.id}</td>
                      <td>${ln.codigo}</td>
-                     <td>${ln.desconto}</td>
-                     <td>${ln.valor_minimo}</td>
+                     <td>${tl_moedaBr(ln.desconto)}</td>
+                     <td>${tl_moedaBr(ln.valor_minimo)}</td>
                      <td>${ln.validade_br}</td>
                      <td class="text-end">
                          <ul class="d-flex justify-content-end list-unstyled gap-3 mt-0">
