@@ -1,4 +1,5 @@
 
+
 function loadList() {
     $.ajax({
         url: URL_BASE + '?c=carrinho&a=list',
@@ -13,7 +14,7 @@ function loadList() {
                  <tr data-id="${ln.id}">
                      <td>${ln.id}</td>
                      <td>${ln.nome}</td>
-                     <td>R$ ${ln.preco}</td>
+                     <td>${tl_moedaBr(ln.preco)}</td>
                      <td>
                         <ul class="d-flex list-unstyled gap-3 mt-0">
                             <li>
@@ -27,7 +28,7 @@ function loadList() {
                             </li>
                          </ul>
                      </td>
-                     <td class="js_subtotal">R$ ${ln.subtotal}</td>
+                     <td class="js_subtotal">${tl_moedaBr(ln.subtotal)}</td>
                      <td class="text-end">
                          <ul class="d-flex justify-content-end list-unstyled gap-3 mt-0">
                          <li>
@@ -46,6 +47,10 @@ function loadList() {
                     <td colspan="3">Total:</td>
                     <td>R$ ${response.total}</td>
                     <td class="text-end">${response.total_item} iten(s)</td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-end">Frete:</td>
+                    <td colspan="2">${response.frete}</td>
                 </tr>
             `);
         }

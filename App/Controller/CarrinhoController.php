@@ -81,11 +81,28 @@ class CarrinhoController
         $total     = $this->carrinho->getSubtotal($listProduct);
         $total_item = $this->carrinho->getTotalItem();
 
+        $frete = '20,00';
+
+        if($total >= 52.00 && $total >= 166.59){
+            $frete = 15.00;
+        }
+
+        if ($total > 200.00) {
+           $frete = '0,00 Gratis!';
+        }
+
+        if ($total < 1) {
+           $frete = '0,00';
+        }
+
+        $frete = 'R$ ' . $frete;
+
         $response = [
             'status' => 'success',
             'data' => $list,
             'total' => number_format($total, 2, ',', '.'),
-            'total_item' => $total_item
+            'total_item' => $total_item,
+            'frete' => $frete
         ];
 
         echo json_encode($response);
