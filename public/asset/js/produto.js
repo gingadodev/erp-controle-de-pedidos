@@ -19,7 +19,7 @@ function loadList() {
                      <td class="text-end">
                          <ul class="d-flex justify-content-end list-unstyled gap-3 mt-0">
                          <li>
-                             <div class="btn btn-success" data-id="${ln.id}">Comprar</div>
+                             <div class="btn btn-success js_bt_add" data-id="${ln.id}">Comprar</div>
                          </li>
                          <li>
                              <div class="btn btn-primary js_bt_edit" data-id="${ln.id}">Editar</div>
@@ -108,6 +108,25 @@ function loadList() {
         });
     });
 
+    $(document).on("click", ".js_bt_add", function() {
+
+        let id = $(this).data("id");
+        let formData = {
+            id: id
+        };
+
+        $.ajax({
+            url: URL_BASE + '?c=carrinho&a=insert',
+            type: 'POST',
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                if (response.status === 'success'){
+                    window.location.href = URL_BASE + '?c=carrinho';
+                }
+            }
+        });
+    });
 
     $(document).on("click", ".js_bt_edit", function() {
 
