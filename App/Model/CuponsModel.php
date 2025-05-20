@@ -161,5 +161,37 @@ class CuponsModel
         }
 
     }
+
+    public function getByCodigo($codigo)
+    {
+
+        $conn = $this->conn->get();
+
+        $str = ''
+            . "SELECT * FROM tb_cupons "
+            . "WHERE codigo = '%s' "
+            . "AND validade >= CURDATE()";
+
+        $sql = sprintf($str, $codigo);
+
+
+        try {
+
+        $stmt = $conn->query($sql);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $result;
+
+        } catch (\Exception $e) {
+
+            return [
+                'status' => 'error',
+                'title'=> 'Ops!',
+                'message' => $e->getMessage(),
+                'sql' => [$sql],
+                'data'=> []
+            ];
+        }
+    }
 }    
 

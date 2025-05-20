@@ -41,6 +41,9 @@ function loadList() {
                  </tr>
                  `);
             });
+
+            if (response.total_item){
+
             tbody.append(`
                 <tr>
                     <td>#</td>
@@ -49,10 +52,40 @@ function loadList() {
                     <td class="text-end">${response.total_item} iten(s)</td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="text-end">Frete:</td>
+                    <td>#</td>
+                    <td colspan="3">Frete:</td>
                     <td colspan="2">${response.frete}</td>
                 </tr>
+                <tr>
+                    <td>#</td>
+                    <td colspan="2">Cupom:</td>
+                    <td>
+                        <ul class="d-flex list-unstyled gap-3 mt-0">
+                           <li>
+                                <input type="text" style="width: 300px" name="cupom" value="" />
+                                <input type="hidden" name="total" value="${response.total}" />
+                           </li>
+                           <li>
+                               <div class="btn btn-secondary js_bt_cupom_aplicar">
+                                  Aplicar
+                               </div>
+                           </li>
+                           <li class="js_cupom_message" style="width: 100px"></li>
+                       </ul>
+                    </td>
+                    <td class="js_cupom_desconto">R$ 0,00</td>
+                    <td class="text-end">Desconto</td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="text-end">
+                         <button class="btn btn-primary">
+                            Comprar
+                         </button>
+                         </td>
+                </tr>
             `);
+
+            }
         }
     });
 }
@@ -109,6 +142,37 @@ $(document).ready(function(){
         });
     });
 
+    $(document).on("click", ".js_bt_cupom_aplicar", function() {
+
+        let codigo = $('input[name="cupom"]').val();
+        let total = $('input[name="total"]').val();
+        let message = $('.js_cupom_message');
+        let desconto = $('.js_cupom_desconto');
+
+
+        let formData = {
+            codigo: codigo,
+            total: total
+        };
+
+        $.ajax({
+            url: URL_BASE + '?c=cupons&a=aplicar',
+            type: 'POST',
+            data: formData,
+            dataType: 'json',
+            success: function(response) {
+                if (response.status === 'success'){
+
+                  message.html('<span class="text-success">Valido.</span>');
+                  desconto.html(tl_moedaBr(response.data.desconto));
+
+                }else{
+                  message.html('<span class="text-danger">Invalido.</span>');
+                  desconto.html('0,00');
+                }
+            }
+        });
+    });
 
 
   });

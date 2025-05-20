@@ -175,5 +175,36 @@ class CuponsController
         echo json_encode($response);
     }
 
+    public function aplicarAction()
+    {
+        header('Content-Type: application/json');
+
+        $codigo = $this->request->post('codigo');
+        $total = $this->request->post('total');
+        $total = str_replace(['.', ','], ['', '.'], $total);
+
+        $row = $this->cupons->getByCodigo($codigo);
+
+        if ((isset($row['id'])) && $total >= $row['valor_minimo']) {
+
+            echo json_encode([
+                'status' => 'success',
+                'message' => 'Cupom VALIDO',
+                'data' => $row
+            ]);
+
+        } else {
+
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Cupom INVALIDO',
+                'data' => $row
+            ]);
+        }
+
+        return;
+
+    }
+
 }    
 
