@@ -182,11 +182,13 @@ class CuponsController
         $codigo = $this->request->post('codigo');
         $total = $this->request->post('total');
         $total = str_replace(['.', ','], ['', '.'], $total);
+        $_SESSION['cupom'] = '';
 
         $row = $this->cupons->getByCodigo($codigo);
 
         if ((isset($row['id'])) && $total >= $row['valor_minimo']) {
 
+            $_SESSION['cupom'] = $codigo;
             echo json_encode([
                 'status' => 'success',
                 'message' => 'Cupom VALIDO',

@@ -78,7 +78,7 @@ function loadList() {
                 </tr>
                 <tr>
                     <td colspan="6" class="text-end">
-                         <button class="btn btn-primary">
+                         <button class="btn btn-primary js_bt_comprar">
                             Comprar
                          </button>
                          </td>
@@ -172,6 +172,10 @@ $(document).ready(function(){
                 }
             }
         });
+    });
+
+    $(document).on("click", ".js_bt_comprar", function() {
+        window.location.href = URL_BASE + '?c=pedidos';
     });
 
 

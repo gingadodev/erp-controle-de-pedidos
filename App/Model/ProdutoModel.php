@@ -38,7 +38,7 @@ class ProdutoModel
         $quantidade = $data['quantidade'];
 
         $strp = ''
-        . "UPDATE tb_produtos SET `nome` = '%s', `preco` = '%s' "
+        . "UPDATE tb_produtos SET `nome` = '%s', `preco` = %s "
         . "WHERE id = %d"
         . '';
 
