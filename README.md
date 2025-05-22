@@ -1,1 +1,1 @@
-# Mini ERP para controle de Pedidos, Produtos, Cupons e Estoque
+# Mini ERP para controle de Pedidos
