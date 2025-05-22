@@ -10,9 +10,9 @@
 ![finalizar pedido](nota/img/screenshot03.png "finalizar pedido")
 
 ### Registro na tabela
-![registro na tabela](nota/img/screenshot01.png "registro na tabela")
+![registro na tabela](nota/img/screenshot04.png "registro na tabela")
 
 ### Cupons
-![cupons](nota/img/screenshot01.png "cupons")
+![cupons](nota/img/screenshot05.png "cupons")
 
 
